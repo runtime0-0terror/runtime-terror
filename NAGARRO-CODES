@@ -1,0 +1,25 @@
+def solve(input1,input2):
+	pass
+	dp1=list(map(str,input1))
+	dp2=list(map(str,input2))
+	dp1.sort()
+	dp2.sort()
+	if dp1==dp2:
+		return 'yes'
+	else:
+		return 'no'
+
+print(solve('zbk','zkb'))
+
+def solve(input1):
+	
+	pass
+	if input1==1 or input1==2:
+		return input1-1
+	n1=0;n2=1
+	for i in range(3,input1+1):
+		temp=(i-1)*(n1+n2)
+		n1=n2;n2=temp
+	return n2
+
+print(solve(3))
