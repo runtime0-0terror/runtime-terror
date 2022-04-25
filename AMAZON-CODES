@@ -1,0 +1,29 @@
+def solve(processes,m):
+
+	# Write your code here
+	res=0;temp=0;n=len(processes)
+	for i in range(m):
+	  temp+=processes[i]
+	res=temp
+	for i in range(1,n-m+1):
+	  temp-=processes[i-1]
+		temp+=processes[i+m-1]
+    res=max(res,temp)
+	return sum(processes)-res
+
+print(solve([10,4,8,1],2))
+
+def solve(parcels,k):
+
+	#Write your code here
+	parcels.sort()
+	res=0;val=1;k-=len(parcels)
+	while k>0:
+		if val in parcels:
+			val+=1
+		else:
+			res+=val;k-=1
+			val+=1
+	return res
+
+print(solve([6,5,4,1,3],7))
